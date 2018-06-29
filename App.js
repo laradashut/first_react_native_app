@@ -1,52 +1,43 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React from "react";
 import {
-  Platform,
+  Dimentions,
+  Image,
   StyleSheet,
+  AppRegistry,
+  View,
   Text,
-  View
-} from 'react-native';
+  StatusBar
+} from "react-native";
+import picLogo from "./assets/cat.jpeg";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Hello, Lara!!!!!
-        </Text>
+        <StatusBar hidden={true}/>
+        <Text style={styles.username}>Fluffy</Text>
+        <Image style={styles.pic} source={picLogo}/>
       </View>
-    );
+    )
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
+    backgroundColor: '#dbdbdb'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  pic: {
+    resizeMode: 'cover',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  username: {
+    // backgroundColor: 'rgba(0, 0, 0, .1)',
+    fontSize: 30,
+    padding: 10
+  }
+})
