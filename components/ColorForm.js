@@ -22,6 +22,8 @@ export default class ColorForm extends Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation
+    const uri = 'http://w3schools.sinsixx.com/css/css_colornames.asp.htm'
     return (
       <View style={styles.container}>
         <TextInput style={styles.txtInput}
@@ -31,6 +33,8 @@ export default class ColorForm extends Component {
       />
         <Text style={styles.button}
           onPress={this.submit}>Add</Text>
+        <Text style={styles.button}
+          onPress={() => navigate('Web', {uri})}>Info</Text>
       </View>
     )
   }
